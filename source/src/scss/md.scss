@@ -1,0 +1,260 @@
+$mb: 15px;
+
+.article-wrap article {
+  position: relative;
+  line-height: 2;
+
+  br {
+    content: ' ';
+    display: block;
+    margin: 5px 0;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  li {
+    letter-spacing: 2px;
+  }
+
+  p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  >* {
+    margin-bottom: $mb;
+  }
+
+  >ul {
+    position: relative;
+    &>li {
+      margin-left: 20px;
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        background: $green;
+        width: 8px;
+        height: 8px;
+        left: 0;
+        margin-top: 10px;
+      }
+    }
+    &.l-list{
+      li{
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  pre {
+    background: $black;
+    padding: 20px;
+    border-radius: $radio;
+  }
+
+  :not(pre) {
+    &>code {
+      display: inline-block;
+      height: 12px;
+      font-size: 12px;
+      line-height: 11px;
+      border-radius: $radio;
+      padding: 3px 5px 3px 7px; // letter-spacing 影响
+      background: $pale-gray;
+    }
+
+    a>code {
+      text-decoration: underline;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+    ul {
+      position: relative;
+
+      li {
+        //list-style-type: square;
+        margin: 10px 0 0 20px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          display: block;
+          background: $green;
+          width: 8px;
+          height: 8px;
+          left: 0;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "barlow", "Microsoft YaHei", "微软雅黑";
+    font-weight: bold;
+    color: $black;
+  }
+
+  h1,
+  h2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 35px;
+
+    &:not(:first-of-type) {
+      margin-top: 40px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      height: 25px;
+      width: 25px;
+      background: $green;
+      left: 0;
+    }
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-top: 25px;
+  }
+
+  h1+h2,
+  h2+h3 {
+    margin-top: 0 !important;
+  }
+
+  .tip,
+  blockquote {
+    border-left: solid 5px $green;
+    padding: 20px;
+    background: $pale;
+  }
+
+  .tip>*:not(:last-child) {
+    margin-bottom: $mb;
+  }
+
+  blockquote {
+    &>p {
+      text-indent: 32px;
+      text-align: justify;
+      text-justify: inter-word;
+
+      * {
+        text-indent: 0;
+      }
+    }
+
+  }
+
+  blockquote.no-indent {
+    &>p {
+      text-indent: 0;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: underline;
+    color: $gray;
+    transition: color .2s;
+
+    &:hover {
+      color: $black;
+    }
+
+    &::after {
+      content: '\e600';
+      font-family: "font_family" !important;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+
+  iframe,
+  img {
+    border-radius: $radio;
+    max-width: 100%;
+  }
+
+  .half {
+    width: 50% !important;
+    max-width: 50% !important;
+  }
+
+  @mixin shrink($w) {
+    $percent: percentage($number: calc($w / 100));
+
+    .shrink-#{$w} {
+      max-width: #{$percent} !important;
+    }
+  }
+
+  @mixin w($w) {
+    $percent: percentage($number: calc($w / 100));
+
+    .w-#{$w} {
+      width: #{$percent} !important;
+      max-width: #{$percent} !important;
+    }
+  }
+
+  @include w(30);
+  @include w(35);
+  @include w(40);
+  @include w(45);
+  @include w(50);
+  @include w(55);
+  @include w(60);
+
+  @include shrink(30);
+  @include shrink(35);
+  @include shrink(40);
+  @include shrink(45);
+  @include shrink(50);
+  @include shrink(55);
+  @include shrink(60);
+
+  .mb-0 {
+    margin-bottom: 0 !important;
+  }
+
+  .fr {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    max-width: 40%;
+    float: right;
+    right: 0;
+    margin-left: 20px;
+    clear: both;
+
+    >*:not(:last-child) {
+      margin-bottom: $mb;
+    }
+  }
+}

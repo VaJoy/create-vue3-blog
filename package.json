@@ -1,0 +1,21 @@
+{
+  "name": "create-vue3-blog",
+  "version": "1.0.1",
+  "bin": {
+    "create-vue3-blog": "index.js"
+  },
+  "keywords": [
+    "vite",
+    "blog",
+    "vue"
+  ],
+  "author": "VaJoy Lan <vajoy@qq.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/VaJoy/create-vue3-blog.git"
+  },
+  "dependencies": {
+    "fs-extra": "^10.1.0"
+  }
+}
