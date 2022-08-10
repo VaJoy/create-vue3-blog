@@ -1,6 +1,6 @@
 {
   "name": "create-vue3-blog",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "bin": {
     "create-vue3-blog": "index.js"
   },

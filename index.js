@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+/*! create-vue3-blog v1.0.2 | MIT */
 const fs = require('fs-extra');
 const path = require('path');
 const cwd = process.cwd();
